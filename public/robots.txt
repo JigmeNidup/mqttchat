@@ -2,4 +2,4 @@ User-agent: *
 Allow: /*
 Disallow: /api/* 
 
-Sitemap: https://jnwbhutansuperfablab.bt/api/sitemap
+Sitemap: https://mqttchat.vercel.app/api/sitemap
