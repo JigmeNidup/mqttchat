@@ -1,5 +1,16 @@
 import Head from "next/head";
-import { Avatar, Button, Card, Col, Form, Input, message, Row } from "antd";
+import {
+  Anchor,
+  Avatar,
+  Button,
+  Card,
+  Col,
+  Form,
+  Input,
+  message,
+  Row,
+  Tooltip,
+} from "antd";
 import mqtt from "mqtt";
 import { useEffect, useState } from "react";
 
@@ -127,17 +138,19 @@ export default function Home() {
                                 padding: 7,
                                 marginRight: 5,
                                 borderRadius: 10,
-                                backgroundColor: "#6699ff",
+                                backgroundColor: "#00e600",
                               }}
                             >
                               {val.message}
                             </span>
-                            <Avatar
-                              style={{ backgroundColor: "#6699ff" }}
-                              size="default"
-                            >
-                              {val.username.substring(0, 2)}
-                            </Avatar>
+                            <Tooltip title={val.username}>
+                              <Avatar
+                                style={{ backgroundColor: "#00e600" }}
+                                size="default"
+                              >
+                                {val.username.substring(0, 2)}
+                              </Avatar>
+                            </Tooltip>
                           </div>
                         );
                       } else {
@@ -151,18 +164,20 @@ export default function Home() {
                             }}
                             key={i}
                           >
-                            <Avatar
-                              style={{ backgroundColor: "#00e600" }}
-                              size="default"
-                            >
-                              {val.username.substring(0, 2)}
-                            </Avatar>
+                            <Tooltip title={val.username}>
+                              <Avatar
+                                style={{ backgroundColor: "#6699ff" }}
+                                size="default"
+                              >
+                                {val.username.substring(0, 2)}
+                              </Avatar>
+                            </Tooltip>
                             <span
                               style={{
                                 padding: 7,
                                 marginLeft: 5,
                                 borderRadius: 10,
-                                backgroundColor: "#00e600",
+                                backgroundColor: "#6699ff",
                               }}
                             >
                               {val.message}
